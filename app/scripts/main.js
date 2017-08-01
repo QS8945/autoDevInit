@@ -1,3 +1,3 @@
 (function(){
-	console.log("23445"); 
+	console.log("22"); 
 })();

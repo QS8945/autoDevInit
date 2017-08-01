@@ -11,14 +11,14 @@ const sass = require('gulp-sass');
 
 gulp.task('style',()=>{
     //执行任务
-    return gulp.src(['./app/styles/*.scss','!./app/styles/_demo.scss'])
+    return gulp.src(['./app/css/*.scss','!./app/css/_demo.scss'])
         .pipe(sass()).pipe(cssnano()).pipe(gulp.dest('./dist/styles'))
         .pipe(browserSync.reload({stream:true}));
 });
 gulp.task('devStyle',()=>{
     //执行任务
-    return gulp.src(['./app/styles/*.scss','!./app/styles/_demo.scss'])
-        .pipe(sass()).pipe(gulp.dest('./app/css'))
+    return gulp.src(['./app/css/*.scss','!./app/css/_demo.scss'])
+        .pipe(sass()).pipe(gulp.dest('./app/styles'))
         .pipe(browserSync.reload({stream:true}));
 });
 gulp.task('script',()=>{
@@ -58,7 +58,7 @@ gulp.task('run',()=>{
             proxy: "http://localhost:3306"
         }
     });
-    gulp.watch('./app/styles/*.scss',['style']);
+    gulp.watch('./app/css/*.scss',['style']);
     gulp.watch('./app/scripts/*.js',['script']);
     gulp.watch('./app/images/*.{png,jpg}',['image']);
     gulp.watch('./app/index.html',['html']);
@@ -70,7 +70,7 @@ gulp.task('devRun',()=>{
             proxy: "http://localhost:3306"
         }
     });
-    gulp.watch('./app/styles/*.scss',['devStyle']);
+    gulp.watch('./app/css/*.scss',['devStyle']);
     gulp.watch('./app/scripts/*.js',['devScript']);
     gulp.watch('./app/images/*.{png,jpg}',['devImage']);
     gulp.watch('./app/index.html',['devHtml']);
