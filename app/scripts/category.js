@@ -1,0 +1,10 @@
+(function(window,document){
+	document.querySelectorAll('.content-left>ul>li').forEach(function(val){
+		val.addEventListener('click',function(){
+			document.querySelectorAll('.content-left>ul>li').forEach(function(val){
+				val.classList.remove('now');
+			});
+			this.classList.add('now');
+		});
+	});
+})(window,document);

@@ -1,0 +1,20 @@
+(function(window,document){
+	document.querySelectorAll('.shop-check').forEach(function(val){
+		val.addEventListener('click',function(){
+			if(this.getAttribute('checked')){
+				this.removeAttribute('checked');
+			}else{
+				this.setAttribute('checked',true);
+			}
+		});
+	});
+	document.querySelectorAll('.delete-box').forEach(function(val){
+		val.addEventListener('click',function(){
+			document.querySelector('.cover').classList.remove('dispaly-hide');
+		});
+	});
+	document.querySelector('.btn-cancel').addEventListener('click',function(){
+		document.querySelector('.cover').classList.add('dispaly-hide');
+	});
+	
+})(window,document);
