@@ -1,1 +1,1 @@
-console.log("hello world");
+!function(){document.querySelector("header");window.onscroll=function(){var e=document.body.scrollTop;opacity=e/350*1.3,document.querySelector("header").style.background="rgba(201,21,35,"+opacity+")"};var e=10800;setInterval(function(){e--;var o=Math.floor(e/60/60),r=Math.floor(e/60%60),n=e%60,t=document.querySelectorAll(".bg-black");t[0].innerText=o>10?Math.floor(o/10):0,t[1].innerText=o%10,t[2].innerText=r>10?Math.floor(r/10):0,t[3].innerText=r%10,t[4].innerText=n>10?Math.floor(n/10):0,t[5].innerText=n%10},1e3)}();
